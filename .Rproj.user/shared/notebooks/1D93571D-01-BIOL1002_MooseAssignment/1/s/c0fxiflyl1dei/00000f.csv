@@ -1,0 +1,2 @@
+"0","MooseMerged <- MooseMerged %>%"
+"0","  mutate(CollisionsPerCapita = Collisions_2020/HumanPopulation)"

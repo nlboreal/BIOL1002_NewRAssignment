@@ -1,0 +1,55 @@
+﻿Ecoregion,Year,Area,Estimated_Moose_Pop,Observation_Method,Data_Source
+North_Shore_Forests,2020,8400,21740,Aerial_Survey,GovOfNewfoundland
+Northern_Peninsula_Forests,2020,12000,32000,Aerial_Survey,NGO_Monitoring
+Long_Range_Barrens,2020,8800,5300,Camera_Trap,MemorialUniversity
+Central_Forests,2020,20500,41250,Aerial_Survey,GovOfNewfoundland
+Western_Forests,2020,6800,17000,Expert_Estimate ,ParksCanada
+EasternHyperOceanicBarrens,2020,4400,2200,Expert_Estimate ,MemorialUniversity
+Maritime_Barrens,2020,21300,20450,Expert_Estimate ,MemorialUniversity
+Avalon_Forests,2020,4200,4040,Aerial_Survey,MemorialUniversity
+StraitOfBelleIsleBarrens,2020,500,5,Camera_Trap,ParksCanada
+North_Shore_Forests,1992,8400,14000,Aerial_Survey,GovOfNewfoundland
+Northern_Peninsula_Forests,1992,12000,21000,Aerial_Survey,NGO_Monitoring
+Long_Range_Barrens,1992,8800,1540,Expert_Estimate ,MemorialUniversity
+Central_Forests,1992,20500,27600,Aerial_Survey,GovOfNewfoundland
+Western_Forests,1992,6800,11650,Aerial_Survey,GovOfNewfoundland
+EasternHyperOceanicBarrens,1992,4400,1400,Camera_Trap,ParksCanada
+Maritime_Barrens,1992,21300,14500,Aerial_Survey,GovOfNewfoundland
+Avalon_Forests,1992,6400,5320,Expert_Estimate ,MemorialUniversity
+StraitOfBelleIsleBarrens,1992,500,NA,NA,NA
+North_Shore_Forests,1980,8400,7400,Aerial_Survey,GovOfNewfoundland
+Northern_Peninsula_Forests,1980,12000,15700,Expert_Estimate ,MemorialUniversity
+Long_Range_Barrens,1980,8800,400,Camera_Trap,ParksCanada
+Central_Forests,1980,20500,13200,Aerial_Survey,GovOfNewfoundland
+Western_Forests,1980,6800,3500,Aerial_Survey,GovOfNewfoundland
+EasternHyperOceanicBarrens,1980,4400,600,Expert_Estimate ,MemorialUniversity
+Maritime_Barrens,1980,21300,8300,Hunter_Reports,GovOfNewfoundland
+Avalon_Forests,1980,6400,200,Camera_Trap,ParksCanada
+StraitOfBelleIsleBarrens,1980,500,NA,NA,NA
+North_Shore_Forests,1960,8400,10600,Aerial_Survey,GovOfNewfoundland
+Northern_Peninsula_Forests,1960,12000,18000,Aerial_Survey,GovOfNewfoundland
+Long_Range_Barrens,1960,8800,1300,Hunter_Reports,GovOfNewfoundland
+Central_Forests,1960,20500,17210,Aerial_Survey,GovOfNewfoundland
+Western_Forests,1960,6800,14500,Expert_Estimate ,ParksCanada
+EasternHyperOceanicBarrens,1960,4400,NA,Hunter_Reports,GovOfNewfoundland
+Maritime_Barrens,1960,21300,10300,Aerial_Survey,GovOfNewfoundland
+Avalon_Forests,1960,4200,200,Expert_Estimate ,ParksCanada
+StraitOfBelleIsleBarrens,1960,500,NA,NA,NA
+North_Shore_Forests,1940,8400,3500,Expert_Estimate ,GovOfNewfoundland
+Northern_Peninsula_Forests,1940,12000,9600,Expert_Estimate ,GovOfNewfoundland
+Long_Range_Barrens,1940,8800,NA,NA,NA
+Central_Forests,1940,20500,11200,Expert_Estimate ,ParksCanada
+Western_Forests,1940,6800,2300,Expert_Estimate ,ParksCanada
+EasternHyperOceanicBarrens,1940,4400,NA,NA,NA
+Maritime_Barrens,1940,21300,NA,Expert_Estimate ,GovOfNewfoundland
+Avalon_Forests,1940,4200,NA,NA,NA
+StraitOfBelleIsleBarrens,1940,500,,NA,NA
+North_Shore_Forests,1904,8400,NA,NA,NA
+Northern_Peninsula_Forests,1904,12000,NA,NA,NA
+Long_Range_Barrens,1904,8800,NA,NA,NA
+Central_Forests,1904,20500,NA,NA,NA
+Western_Forests,1904,6800,4,Count,GovOfNewfoundland
+EasternHyperOceanicBarrens,1904,4400,NA,NA,NA
+Maritime_Barrens,1904,21300,NA,NA,NA
+Avalon_Forests,1904,4200,NA,NA,NA
+StraitOfBelleIsleBarrens,1904,500,NA,NA,NA

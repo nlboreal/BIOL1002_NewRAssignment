@@ -1,0 +1,7 @@
+"0","plot(MooseMerged$HumanPopulation, MooseMerged$CollisionsPerCapita,"
+"0","     xlab = ""Human Population"","
+"0","     ylab = ""Collisions per Person"","
+"0","     main = ""Collisions per Capita vs Population Size"","
+"0","     pch = 19,"
+"0","     col = ""purple"")"
+"0",""

@@ -1,0 +1,2 @@
+"0","barplot(BalsamFirImpacts$MeanBrowseScore, names.arg = BalsamFirImpacts$Ecoregion, xlab= ""Ecoregion"", ylab = ""Browse Score"", main = ""Browse scores on balsam fir"", col = ""grey"", cex.names = 0.6)"
+"0",""

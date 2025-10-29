@@ -1,0 +1,4 @@
+"0","BrowsedSpecies <- SaplingData %>%"
+"0","  group_by(Species) %>%"
+"0","  summarize(MeanBrowseScore = mean(BrowsingScore)) %>%"
+"0","  print()"

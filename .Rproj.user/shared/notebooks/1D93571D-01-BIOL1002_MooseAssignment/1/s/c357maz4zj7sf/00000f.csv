@@ -1,0 +1,2 @@
+"0",""
+"0","plot(MooseMerged$MooseDensity, MooseMerged$Collisions_2020, xlab = ""Moose Density"", ylab = ""Collisions"")"

@@ -1,0 +1,1 @@
+"0","MooseDataWest <- filter(Moosedata, Ecoregion == ""Western_Forests"")"

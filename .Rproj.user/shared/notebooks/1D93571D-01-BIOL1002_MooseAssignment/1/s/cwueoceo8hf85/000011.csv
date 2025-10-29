@@ -1,0 +1,1 @@
+"0","Moosedata <- select(Moosedata, Ecoregion, Year, Area, Estimated_Moose_Pop)"

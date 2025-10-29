@@ -1,0 +1,5 @@
+"0","plot(MooseDataWest$Year, MooseDataWest$MooseDensity, "
+"0","     type = ""l"", "
+"0","     xlab = ""year"", "
+"0","     ylab = ""Moose per sq km"", "
+"0","     main = ""Moose density over time in the Western Forest Ecoregion"")"

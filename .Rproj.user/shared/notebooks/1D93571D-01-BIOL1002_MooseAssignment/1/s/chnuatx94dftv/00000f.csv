@@ -1,0 +1,2 @@
+"0","Moosedata_2020 <- Moosedata %>%"
+"0","  filter(Year == 2020)"

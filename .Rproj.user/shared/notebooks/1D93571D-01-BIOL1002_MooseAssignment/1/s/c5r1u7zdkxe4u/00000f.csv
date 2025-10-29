@@ -1,0 +1,5 @@
+"0","BlackSpruceImpacts <- SaplingData %>%"
+"0","  filter(Species == ""Black_Spruce"") %>%"
+"0","  group_by(Ecoregion) %>%"
+"0","  summarise(MeanBrowseScore = mean(BrowsingScore)) %>%"
+"0","  print()"

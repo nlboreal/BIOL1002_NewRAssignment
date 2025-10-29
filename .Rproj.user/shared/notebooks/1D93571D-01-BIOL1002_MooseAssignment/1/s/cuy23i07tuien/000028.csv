@@ -1,0 +1,8 @@
+"0",""
+"0","ggplot(BrowsingBySpeciesDensity, aes(x = AvgDensity, y = AvgBrowsing, color= Species)) +"
+"0","  geom_point(size = 3) +"
+"0","  "
+"0","  theme_minimal() +"
+"0","  labs(title = ""Browsing Intensity Across Moose Density by Species"","
+"0","       x = ""Average Moose Density"","
+"0","       y = ""Average Browsing Score"")"

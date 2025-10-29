@@ -1,0 +1,5 @@
+"0","Collisions_2020 <- c(56, 60, 14, 36, 48, 10, 40, 110, 6)"
+"0","HumanPopulation <- c(18000, 12000, 4000, 75100, 24000,3500, 32000, 270000,    2300)"
+"0","StudySites <- c(""North_Shore_Forests"",""Northern_Peninsula_Forests"", ""Long_Range_Barrens"",""Central_Forests"",""Western_Forests"",""EasternHyperOceanicBarrens"",""Maritime_Barrens"",""Avalon_Forests"",""StraitOfBelleIsleBarrens"")"
+"0",""
+"0","MooseCollisions <- data.frame(StudySites, HumanPopulation, Collisions_2020)"

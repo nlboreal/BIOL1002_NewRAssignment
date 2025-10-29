@@ -1,0 +1,46 @@
+﻿Ecoregion,Tree_ID,Species,Height,BrowsingScore
+North_Shore_Forests,NorthS_1,Alder ,17.4,4.5
+North_Shore_Forests,NorthS_2,Black_Spruce,26.5,4.0
+North_Shore_Forests,NorthS_3,Black_Spruce,26.5,4.0
+North_Shore_Forests,NorthS_4,White_Birch,25.5,4.0
+North_Shore_Forests,NorthS_5,Balsam_Fir,20.4,4.5
+North_Shore_Forests,NorthS_6,Willow,18.5,5.0
+North_Shore_Forests,NorthS_7,Balsam_Fir,21.2,4.5
+North_Shore_Forests,NorthS_8,Balsam_Fir,22.5,4.5
+Northern_Peninsula_Forests,NorthP_1,Alder ,17.9,5.0
+Northern_Peninsula_Forests,NorthP_2,Willow,17.6,5.0
+Northern_Peninsula_Forests,NorthP_3,White_Birch,20.1,4.5
+Northern_Peninsula_Forests,NorthP_4,Black_Spruce,22.4,4.0
+Northern_Peninsula_Forests,NorthP_5,Willow,17.7,5.0
+Northern_Peninsula_Forests,NorthP_6,Balsam_Fir,21.2,4.5
+Northern_Peninsula_Forests,NorthP_7,Balsam_Fir,22.5,4.0
+Long_Range_Barrens,Long_1,Black_Spruce,33.5,2.0
+Long_Range_Barrens,Long_2,Balsam_Fir,35.5,1.0
+Long_Range_Barrens,Long_3,Alder ,23.3,3.5
+Long_Range_Barrens,Long_4,Willow,21.7,4.0
+Long_Range_Barrens,Long_5,White_Birch,35.6,2.5
+Central_Forests,Cent_1,Black_Spruce,31.5,3.0
+Central_Forests,Cent_2,White_Birch,29.2,4.0
+Central_Forests,Cent_3,Balsam_Fir,20.3,3.5
+Central_Forests,Cent_4,Alder ,19.9,4.5
+Central_Forests,Cent_5,Willow,18.3,5.0
+Western_Forests,West_1,Black_Spruce,24.5,3.5
+Western_Forests,West_2,White_Birch,21.5,4.0
+Western_Forests,West_3,Black_Ash,11.2,5.0
+Western_Forests,West_4,Alder ,19.3,5.0
+Western_Forests,West_5,Willow,18.2,5.0
+EasternHyperOceanicBarrens,East_1,Black_Spruce,45.7,0.0
+EasternHyperOceanicBarrens,East_2,Alder ,24.5,4.0
+EasternHyperOceanicBarrens,East_3,Willow,22.6,4.5
+EasternHyperOceanicBarrens,East_4,White_Birch,35.3,1.5
+EasternHyperOceanicBarrens,East_5,Balsam_Fir,30.1,2.0
+Maritime_Barrens,Mari_1,Black_Spruce,36.7,0.0
+Maritime_Barrens,Mari_2,Alder ,20.9,3.5
+Maritime_Barrens,Mari_3,Balsam_Fir,22.4,2.0
+Avalon_Forests,Aval_1,Black_Spruce,44.5,0.5
+Avalon_Forests,Aval_2,White_Birch,35.1,1.5
+Avalon_Forests,Aval_3,Alder ,24.2,4.0
+Avalon_Forests,Aval_4,Balsam_Fir,30.1,2.0
+Avalon_Forests,Aval_5,Balsam_Fir,28.1,2.0
+StraitOfBelleIsleBarrens,Stra_1,Willow,25.4,1.0
+,,,,
