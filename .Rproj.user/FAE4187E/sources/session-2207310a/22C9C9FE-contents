@@ -1,0 +1,5 @@
+book_filename: "Biology 1002 - Moose Datasets"
+language:
+  ui:
+  delete_merged_file: true
+output_dir: "docs"
