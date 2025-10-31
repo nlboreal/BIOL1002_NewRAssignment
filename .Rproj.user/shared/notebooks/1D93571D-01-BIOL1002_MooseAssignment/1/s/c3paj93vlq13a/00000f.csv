@@ -1,4 +1,0 @@
-"0","SaplingData_Ecoregion <- SaplingData %>%"
-"0","  group_by(Ecoregion) %>%"
-"0","  summarize(AverageBrowsing = mean(BrowsingScore)) %>%"
-"0","  print()"

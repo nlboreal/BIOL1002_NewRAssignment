@@ -1,3 +1,0 @@
-"0","SevereSites <- SaplingDataHeight %>%"
-"0","  filter(AverageTreeHeight < 20) %>%"
-"0","  print()"

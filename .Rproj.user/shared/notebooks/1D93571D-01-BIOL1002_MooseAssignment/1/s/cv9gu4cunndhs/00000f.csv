@@ -1,4 +1,0 @@
-"0","plot(Moosedata$Year, Moosedata$MooseDensity, "
-"0","     xlab = ""year"", "
-"0","     ylab = ""Moose per sq km"", "
-"0","     main = ""Moose density in Newfoundland ecoregions over time"")"

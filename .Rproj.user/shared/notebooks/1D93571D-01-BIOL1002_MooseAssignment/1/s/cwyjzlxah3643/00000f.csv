@@ -1,4 +1,0 @@
-"0","SaplingDataHeight <- SaplingData %>%"
-"0","  group_by(Ecoregion) %>%"
-"0","  summarize(AverageTreeHeight = mean(Height)) %>%"
-"0","  print()"
