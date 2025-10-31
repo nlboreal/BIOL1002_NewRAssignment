@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Biology 1002 - Moose Data</title>
+  <meta name="description" content="R skills for first year Biology" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Biology 1002 - Moose Data" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="R skills for first year Biology" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Biology 1002 - Moose Data" />
+  
+  <meta name="twitter:description" content="R skills for first year Biology" />
+  
+
+<meta name="author" content="Elizabeth Mack and Yolanda Wiersma, Memorial University" />
+
+
+<meta name="date" content="2025-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="before-you-start-please-do-the-following.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BIOL1002 - Moose Assignment</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> This is a manual for Biology 1002 students</a></li>
+<li class="chapter" data-level="2" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html"><i class="fa fa-check"></i><b>2</b> Before you start, please do the following:</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html#assignment-overview"><i class="fa fa-check"></i><b>2.1</b> Assignment Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html#datasets-overview"><i class="fa fa-check"></i><b>2.2</b> Datasets Overview</a></li>
+<li class="chapter" data-level="2.3" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html#part-i-moose-populations-in-newfoundland"><i class="fa fa-check"></i><b>2.3</b> Part I: Moose Populations in Newfoundland</a></li>
+<li class="chapter" data-level="2.4" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html#part-ii-tree-sapling-study"><i class="fa fa-check"></i><b>2.4</b> Part II: Tree Sapling Study</a></li>
+<li class="chapter" data-level="2.5" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html#part-iii-creating-and-joining-datasets"><i class="fa fa-check"></i><b>2.5</b> Part III: Creating and Joining Datasets</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html#moose-vehicle-collisions"><i class="fa fa-check"></i><b>2.5.1</b> Moose-vehicle collisions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html"><i class="fa fa-check"></i><b>3</b> Before coming to the labs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html#assignment-overview-1"><i class="fa fa-check"></i><b>3.1</b> Assignment Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html#dataset-overview"><i class="fa fa-check"></i><b>3.2</b> Dataset Overview</a></li>
+<li class="chapter" data-level="3.3" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html#part-one-moose-populations-in-newfoundland"><i class="fa fa-check"></i><b>3.3</b> Part One: Moose Populations in Newfoundland</a></li>
+<li class="chapter" data-level="3.4" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html#part-two-tree-sapling-study"><i class="fa fa-check"></i><b>3.4</b> Part Two: Tree Sapling Study</a></li>
+<li class="chapter" data-level="3.5" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html#part-three-creating-and-joining-datasets"><i class="fa fa-check"></i><b>3.5</b> Part Three: Creating and Joining Datasets</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="before-coming-to-the-labs.html"><a href="before-coming-to-the-labs.html#moose-vehicle-collisions-1"><i class="fa fa-check"></i><b>3.5.1</b> Moose-vehicle collisions</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biology 1002 - Moose Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Biology 1002 - Moose Data</h1>
+<p class="author"><em>Elizabeth Mack and Yolanda Wiersma, Memorial University</em></p>
+<p class="date"><em>2025-10-31</em></p>
+</div>
+<div id="this-is-a-manual-for-biology-1002-students" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> This is a manual for Biology 1002 students<a href="index.html#this-is-a-manual-for-biology-1002-students" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>You will gain experience using R to analyse data from Newfoundland.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="before-you-start-please-do-the-following.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "download": "epub"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

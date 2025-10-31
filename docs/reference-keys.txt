@@ -1,0 +1,15 @@
+this-is-a-manual-for-biology-1002-students
+before-you-start-please-do-the-following
+assignment-overview
+datasets-overview
+part-i-moose-populations-in-newfoundland
+part-ii-tree-sapling-study
+part-iii-creating-and-joining-datasets
+moose-vehicle-collisions
+before-coming-to-the-labs
+assignment-overview-1
+dataset-overview
+part-one-moose-populations-in-newfoundland
+part-two-tree-sapling-study
+part-three-creating-and-joining-datasets
+moose-vehicle-collisions-1

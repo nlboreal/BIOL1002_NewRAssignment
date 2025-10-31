@@ -1,0 +1,5 @@
+book_filename: "BIOL 1002 R Assignment - Moose Data"
+language:
+  ui:
+delete_merged_file: true
+output_dir: "docs"
