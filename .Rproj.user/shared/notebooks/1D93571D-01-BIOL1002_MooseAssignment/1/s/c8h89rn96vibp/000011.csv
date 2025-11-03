@@ -1,5 +1,0 @@
-"0","MooseData_final <- Moosedata %>%"
-"0","  filter(Year == 2020) %>%"
-"0","  filter(MooseDensity > 2.0) %>%"
-"0","  arrange(desc(MooseDensity)) %>%"
-"0","  print()"

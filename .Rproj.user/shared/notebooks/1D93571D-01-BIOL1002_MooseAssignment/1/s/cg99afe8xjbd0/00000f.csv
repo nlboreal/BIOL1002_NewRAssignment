@@ -1,4 +1,0 @@
-"0","EcoregionTally<- SaplingData %>%"
-"0","  group_by(Ecoregion) %>%"
-"0","  tally() %>% "
-"0","  print()"

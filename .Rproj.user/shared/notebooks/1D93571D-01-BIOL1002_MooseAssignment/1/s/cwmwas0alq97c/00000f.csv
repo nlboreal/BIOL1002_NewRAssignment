@@ -1,5 +1,0 @@
-"0","BalsamFirImpacts <- SaplingData %>%"
-"0","  filter(Species == ""Balsam_Fir"") %>%"
-"0","  group_by(Ecoregion) %>%"
-"0","  summarise(MeanBrowseScore = mean(BrowsingScore)) %>%"
-"0","  print()"

@@ -1,2 +1,0 @@
-"0","MooseMerged <- Moosedata_2020 %>%"
-"0","  left_join(MooseCollisions, by = ""Ecoregion"")"
