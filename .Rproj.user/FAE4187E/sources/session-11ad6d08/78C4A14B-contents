@@ -65,7 +65,7 @@ There is also help available from the TAs/Help Centre. Details on schedule and c
 
 -   Review [best practices](https://ahurford.github.io/quant-guide-all-courses/style.html) for guidance on how to organize your files.
 
--   Download, to an appropriate folder, the following .csv files from Brightspace: You can also access these data from [here](https://github.com/jbaafi/quant-guide-data/tree/main/BIOL1002-data).
+-   Download, to an appropriate folder, the following .csv files from Brightspace: You can also access these data from [here](https://github.com/jbaafi/quant-guide-data/tree/main/BIOL1002-data). (As an alternative to the instructions below, you can load the data from the url using `csv.read()`, but you do need to use the link that appears after you click on the `raw` button in the upper righthand corner for the relevant `.csv` files. If you use this url method you do not need to download the data, but the url approach requires an internet connection to be able to load the data to R).
 
     -   MoosePopulation.csv
 
