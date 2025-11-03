@@ -59,7 +59,7 @@ There is also help available from the TAs/Help Centre. Details on schedule and c
 
 ------------------------------------------------------------------------
 
-# PART I: Managing biological data
+# Managing biological data
 
 **Getting started**
 
@@ -109,7 +109,7 @@ You will be working two different datasets.
 
 You must download these datasets before beginning this assignment. You can download them from Brightspace: You can also access these data from [here](https://github.com/jbaafi/quant-guide-data/tree/main/BIOL1002-data). Then, save all .csv files to an appropriate folder (E.g., BIOL1002_Coding).
 
-## Part I: Moose Populations in Newfoundland
+# Part I: Moose Populations in Newfoundland
 
 **Question 1**\
 [Install](https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages) the `dplyr` package using `install.packages()` function. You only need to do this once.\
@@ -153,7 +153,8 @@ Different ecoregions cover different land areas, so comparing raw population num
 Moosedata <- mutate(Moosedata, MooseDensity = Estimated_Moose_Pop / Area)
 ```
 
-**Question 7** plot()\
+**Question 7** 
+
 a. Now, let's visualize the data. Using the [`plot()`](https://ahurford.github.io/quant-guide-all-courses/graph.html#scatter-plots-with-plotxy) function, make a line graph to show the the changes in `MooseDensity` over `Year`. Full marks for including axis labels and figure title ( `xlab` , `ylab` , `main`).
 
 ```{r, fig.show='hide'}
@@ -172,7 +173,7 @@ a) Create a new dataset, where you use the [`filter()`](https://ahurford.github.
 MooseDataWest <- filter(Moosedata, Ecoregion == "Western_Forests")
 ```
 \
-b) Use the `plot()` function to make a [line graph](https://ahurford.github.io/quant-guide-all-courses/graph.html#line-graphs) (`type = "l"`) showing how moose density has changed over time in Western_Forests region. Full marks for including axis labels and figure title ( `xlab` , `ylab` , `main`). *HINT:* Adapt the code given to you in Question 7 above. 
+b) Use the `plot()` function to make a [line graph](https://ahurford.github.io/quant-guide-all-courses/graph.html#line-graphs) (`type = "l"`) showing how moose density has changed over time in Western_Forests region. Full marks for including axis labels and figure title ( `xlab` , `ylab` , `main`). **HINT:** Adapt the code given to you in Question 7 above. 
 
 ```{r, include = FALSE}
 plot(MooseDataWest$Year, MooseDataWest$MooseDensity, 
@@ -186,7 +187,7 @@ plot(MooseDataWest$Year, MooseDataWest$MooseDensity,
 **Question 9**\
 The research team was interested in trends for all ecoregions for just recent years. 
 
-a. Using the **original, unfiltered dataset you created in Question 6 above**, use the [`filter()`](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#filtering-data) function to filter for the year `2020`, and save the dataset under a new name (e.g., MooseData_2020). HINT: Adapt the code given to you in Question 8 above.
+a. Using the **original, unfiltered dataset you created in Question 6 above**, use the [`filter()`](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#filtering-data) function to filter for the year `2020`, and save the dataset under a new name (e.g., MooseData_2020). **HINT:** Adapt the code given to you in Question 8 above.
 
 ```{r, include=FALSE}
 Moosedata_2020 <- Moosedata %>%
@@ -201,17 +202,19 @@ MooseDensity_2020_High <- filter(Moosedata_2020, MooseDensity > 2.0)
 
 <!-- -->
 
-c)  With the dataset you just created, use the [`arrange()`](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#sorting-the-data) function to sort the `MooseDensity` column in descending order. Template: `arrange(Dataset, desc(ColumnName))`
+c)  With the dataset you just created, use the [`arrange()`](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#sorting-the-data) function to sort the `MooseDensity` column in descending order. **HINT:** You can follow this template: 
 
-```{r, echo=FALSE}
+`arrange(Dataset, desc(ColumnName))`
+
+```{r, echo=FALSE, include=FALSE}
 arrange(MooseDensity_2020_High, desc(MooseDensity))
 ```
 
 **Question 10**\
 Pipes `%>%` allow you to connect one line of code to the next, so you don't have to save the dataset under a new name for each step.\
-Repeat the steps from the previous question using a pipe at the end of each line. Using your inital dataset, `filter()` for the year `2020`, then `filter()` for `MooseDensity` above `2.0`, then `arrange()` in `desc()` order, then finally `print()` the output.
+Repeat the steps from the previous question using a pipe at the end of each line. Using your inital dataset, `filter()` for the year `2020`, then `filter()` for `MooseDensity` above `2.0`, then `arrange()` in `desc()` order, then finally `print()` the output. Code showing how to use pipes `%>%` is below, however you may need to adapt it to the way you have named your dataframes.
 
-```{r, include=FALSE}
+```{r, include=TRUE, results='hide'}
 MooseData_final <- Moosedata %>%
   filter(Year == 2020) %>%
   filter(MooseDensity > 2.0) %>%
@@ -222,7 +225,7 @@ MooseData_final <- Moosedata %>%
 
 ------------------------------------------------------------------------
 
-## Part II: Tree Sapling Study
+# Part II: Tree Sapling Study
 
 In this section we will be working with the `SaplingStudy` dataset. We are giving you less code here; but many of the tasks are similar to what you just completed in Part One. Your task is to adapt the code given above to these new datasets and questions. \
 
@@ -248,7 +251,7 @@ SaplingData <- na.omit(SaplingData)
 **Question 12**\
 a. How does moose browsing pressure vary across different ecoregions? With the help of [pipes](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes) `%>%`, create a new database using the [`group_by()`](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#grouping) function to group the data by `Ecoregion`, and then use `summarize()` to calculate the `mean()` moose `BrowsingScore` for each site. Print the result using the `print()` function.
 
-```{r, echo=FALSE}
+```{r, echo=TRUE, include=FALSE}
 SaplingData_Ecoregion <- SaplingData %>%
   group_by(Ecoregion) %>%
   summarize(AverageBrowsing = mean(BrowsingScore)) %>%
@@ -261,7 +264,7 @@ b)  Add a comment `#` saying which ecoregion has the most moose browsing. Which 
 
 **Question 13**\
 
-a) How does the average tree height vary across different ecoregions? With the help of [pipes](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes) `%>%`, use the `group_by` function to group the data by `Ecoregion`, and then use `summarize()` to calculate the `mean()` tree `Height` for each group. Print the result using the `print()` function. *HINT:* Adapt the code from Question 12 above. 
+a) How does the average tree height vary across different ecoregions? With the help of [pipes](https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes) `%>%`, use the `group_by` function to group the data by `Ecoregion`, and then use `summarize()` to calculate the `mean()` tree `Height` for each group. Print the result using the `print()` function. **HINT:** Adapt the code from Question 12 above. 
 
 ```{r, include = F}
 SaplingDataHeight <- SaplingData %>%
@@ -270,7 +273,7 @@ SaplingDataHeight <- SaplingData %>%
   print()
 ```
 
-b)  The team considered average heights less than 20 cm to be severely browsed by moose. Add a short comment `#` to describe which ecoregions have average heights less than 20. Do this by looking at your data or using a filter(). Print the result using the `print()` function.
+b)  The team considered average heights less than 20 cm to be severely browsed by moose. Add a short comment `#` to describe which ecoregions have average heights less than 20 cm. Do this by looking at your data or using a filter(). Print the result using the `print()` function.
 
 ```{r, include=FALSE}
 SevereSites <- SaplingDataHeight %>%
@@ -292,7 +295,7 @@ b)  Add a comment `#` saying which species has the highest browsing score, which
 
 **Question 15**
 
-A team of researchers in interested in how Balsam Fir browsing intensity varies by ecoregion. With the help of pipes, use the `filter()` function to filter the `Species` column for only `Balsam_Fir`, then use `group_by()` function to sort by `Ecoregion` , and then determine `mean()` moose `BrowsingScore`. Remember to save the resulting summary table under a new name (E.g.,BalsamFir). *HINT:* Adapt the code from Question 12 above.
+A team of researchers in interested in how Balsam Fir browsing intensity varies by ecoregion. With the help of pipes `%>%`, use the `filter()` function to filter the `Species` column for only `Balsam_Fir`, then use `group_by()` function to sort by `Ecoregion` , and then determine `mean()` moose `BrowsingScore`. Remember to save the resulting summary table under a new name (E.g.,BalsamFir). **HINT:** Adapt the code from Question 12 above.
 
 ```{r, include=FALSE}
 BalsamFirImpacts <- SaplingData %>%
@@ -326,7 +329,7 @@ barplot(BalsamFirImpacts$MeanBrowseScore, names.arg = BalsamFirImpacts$Ecoregion
 
 How does Black Spruce browsing intensity varies by ecoregion? Repeat the steps from question 15 and 16 but now with Black Spruce.
 
-a)  With the help of pipes, use the `filter()` function to filter the `Species` column for only `Black_Spruce`, then use `group_by()` function to sort by `Ecoregion` , and then determine `mean()` moose `BrowsingScore`. Remember to save the resulting summary table under a new name (E.g., `BlackSpruce`).
+a)  With the help of pipes, use the `filter()` function to filter the `Species` column for only `Black_Spruce`, then use `group_by()` function to sort by `Ecoregion` , and then determine `mean()` moose `BrowsingScore`. Remember to save the resulting summary table under a new name (e.g., `BlackSpruce`).
 
 ```{r, include=FALSE}
 BlackSpruceImpacts <- SaplingData %>%
@@ -354,7 +357,7 @@ c)  How does Black Spruce browsing compare to Balsam Fir browsing across ecoregi
 Were the same number of tree saplings counted in each Ecoregion?\
 Add a line of code where you use the `group_by()` function and the `tally()` function to determine how many trees were counted in each `Ecoregion`?
 
-```{r, echo=FALSE}
+```{r, include==FALSE, results='hide'}
 EcoregionTally<- SaplingData %>%
   group_by(Ecoregion) %>%
   tally() %>% 
@@ -362,7 +365,7 @@ EcoregionTally<- SaplingData %>%
 ```
 
 **Question 19**\
-Were the same number of saplings counted for each species? Add a line of code where you use the `tally()` function to determine how many individual trees were counted in for each `Species`? *HINT:* Adapt the code from Question 18 above.
+Were the same number of tree saplings counted for each species? Add a line of code where you use the `tally()` function to determine how many individual trees were counted in for each `Species`? **HINT:** Adapt the code from Question 18 above.
 
 ```{r, include=FALSE}
 EcoregionTally<- SaplingData %>%
@@ -382,7 +385,7 @@ b\. Why is it important to recognize bias in ecological datasets. Write 1-2 sent
 
 
 
-## Part III: Creating and Joining Datasets
+# Part III: Creating and Joining Datasets
 
 Moose density and browsing preferences
 
@@ -395,7 +398,7 @@ The team of researchers we curious if moose browsing preferences changed dependi
 In this section, we will merge the `Moosedata`and the `Sapling` datasets, to explore how browsing intensity on different tree species correlates with moose density across ecoregions. You will practice using the left_join() function to combine these dataset
 
 **Question 21**\
-a) Using the orginal `Moosedata` dataset, `filter()` function to select only the rows for the year `2020`. Then create a new column called `MooseDensity` using the `mutate()` function. Save the dataset under a new name called `MooseData_2020`. (*HINT:* you previously did this for question 9)\
+a) Using the orginal `Moosedata` dataset, `filter()` function to select only the rows for the year `2020`. Then create a new column called `MooseDensity` using the `mutate()` function. Save the dataset under a new name called `MooseData_2020`. (**HINT:** you previously did this for question 9)\
 
 b) Use `left_join()` to join `MooseData2020` with the `Saplings` dataset, matching rows by the common `Ecoregion` column.
 
@@ -406,7 +409,7 @@ MooseSaplingData <- left_join(Moosedata, SaplingData, by = 'Ecoregion', relation
 **Question 22**
 
 Using the dataset you just created, calculate the average browsing score and average moose density for each species within each ecoregion, save your dataset under the name `BrowsingBySpeciesDensity`.\
-With the help of pipes `%>%` , `group_by` `Species` and `Ecoregion`, then use `summarize()` to find the `mean()` `BrowsingScore`, and then find the `mean()` `MooseDensity`. Print the result using the `print()` function. *HINT:* There is example code using pipes `%>%` in Questions 12 and 18 above. 
+With the help of pipes `%>%` , `group_by` `Species` and `Ecoregion`, then use `summarize()` to find the `mean()` `BrowsingScore`, and then find the `mean()` `MooseDensity`. Print the result using the `print()` function. **HINT:** There is example code using pipes `%>%` in Questions 12 and 18 above. 
 
 
 ```{r, include = FALSE}
@@ -420,7 +423,7 @@ group_by(Species, Ecoregion) %>%
 **Question 23**\
 The research team created the following figure to help visualize how average browsing intensity on different tree species changes with moose density across ecoregions. The graph uses the `ggplot2` package, which is beyond the scope of this assignment. However, if you would like, you can copy and paste the code below into your R console to explore the plot.
 
-```{r BrowsingIntensitySpecies_plot, echo=FALSE, fig.align='center'}
+```{r BrowsingIntensitySpecies_plot, echo=TRUE, fig.align='center'}
 library(ggplot2)
 
 ggplot(BrowsingBySpeciesDensity, aes(x = AvgDensity, y = AvgBrowsing, color= Species)) +
@@ -463,9 +466,9 @@ StudySites <- c("North_Shore_Forests","Northern_Peninsula_Forests", "Long_Range_
 MooseCollisions <- data.frame(StudySites, HumanPopulation, Collisions_2020)
 ```
 
-**Question 25** left_join\
+**Question 25** 
 
-a) Now let's join this dataset with `Moosedata` filtered for just the year 2020 (from Part One, question 9). Try to use `left_join()` to join them. *HINT:* follow the template of the code you used above in Pquestion 21. Why does this not work?
+a) Now let's join this dataset with `Moosedata` filtered for just the year 2020 (from Part One, question 9). Try to use `left_join()` to join them. **HINT:** follow the template of the code you used above in question 21. Why does this not work?
 
 b)  Use the `rename_with()` function, to change the column name of one of the datasets to match the other, so that they can be joined. Here is some template code that you can adapt to make the necessary change. 
 
@@ -476,7 +479,7 @@ MooseCollisions <-MooseCollisions %>%
   rename(Ecoregion = StudySites)
 ```
 
-c)  Now join the datasets into a new dataset using `left_join()`. *HINT:* follow the template of the code you used above in question 21. 
+c)  Now join the datasets into a new dataset using `left_join()`. **HINT:** follow the template of the code you used above in question 21. 
  
 ```{r, include=FALSE}
 MooseMerged <- Moosedata_2020 %>%

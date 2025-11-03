@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Part III: Creating and Joining Datasets | BIOL 1002: Moose Ecology Study</title>
+  <meta name="description" content="R skills for first year Biology" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Part III: Creating and Joining Datasets | BIOL 1002: Moose Ecology Study" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="R skills for first year Biology" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Part III: Creating and Joining Datasets | BIOL 1002: Moose Ecology Study" />
+  
+  <meta name="twitter:description" content="R skills for first year Biology" />
+  
+
+<meta name="author" content="Elizabeth Mack and Yolanda Wiersma" />
+
+
+<meta name="date" content="2025-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="part-ii-tree-sapling-study.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BIOL1002_NewRAssignment</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> This is a manual for Biology 1002 students</a></li>
+<li class="chapter" data-level="2" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html"><i class="fa fa-check"></i><b>2</b> Before you start, please do the following:</a></li>
+<li class="chapter" data-level="3" data-path="managing-biological-data.html"><a href="managing-biological-data.html"><i class="fa fa-check"></i><b>3</b> Managing biological data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="managing-biological-data.html"><a href="managing-biological-data.html#assignment-overview"><i class="fa fa-check"></i><b>3.1</b> Assignment Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="managing-biological-data.html"><a href="managing-biological-data.html#datasets-overview"><i class="fa fa-check"></i><b>3.2</b> Datasets Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="part-i-moose-populations-in-newfoundland.html"><a href="part-i-moose-populations-in-newfoundland.html"><i class="fa fa-check"></i><b>4</b> Part I: Moose Populations in Newfoundland</a></li>
+<li class="chapter" data-level="5" data-path="part-ii-tree-sapling-study.html"><a href="part-ii-tree-sapling-study.html"><i class="fa fa-check"></i><b>5</b> Part II: Tree Sapling Study</a></li>
+<li class="chapter" data-level="6" data-path="part-iii-creating-and-joining-datasets.html"><a href="part-iii-creating-and-joining-datasets.html"><i class="fa fa-check"></i><b>6</b> Part III: Creating and Joining Datasets</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="part-iii-creating-and-joining-datasets.html"><a href="part-iii-creating-and-joining-datasets.html#moose-vehicle-collisions"><i class="fa fa-check"></i><b>6.0.1</b> Moose-vehicle collisions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL 1002: Moose Ecology Study</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="part-iii-creating-and-joining-datasets" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Part III: Creating and Joining Datasets<a href="part-iii-creating-and-joining-datasets.html#part-iii-creating-and-joining-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Moose density and browsing preferences</p>
+<p>The team of researchers we curious if moose browsing preferences changed depending on moose density. They hypothesized that at</p>
+<ul>
+<li><p><strong>At low moose densities:</strong> browsing would be selective, with moose favoring the most palatable tree species.</p></li>
+<li><p><strong>At high moose densities:</strong> Would have high competition, and browsing pressure would become less selective, with moose consuming all sapling species more uniformly.<br />
+</p></li>
+</ul>
+<p>In this section, we will merge the <code>Moosedata</code>and the <code>Sapling</code> datasets, to explore how browsing intensity on different tree species correlates with moose density across ecoregions. You will practice using the left_join() function to combine these dataset</p>
+<p><strong>Question 21</strong><br />
+a) Using the orginal <code>Moosedata</code> dataset, <code>filter()</code> function to select only the rows for the year <code>2020</code>. Then create a new column called <code>MooseDensity</code> using the <code>mutate()</code> function. Save the dataset under a new name called <code>MooseData_2020</code>. (<strong>HINT:</strong> you previously did this for question 9)<br />
+</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Use <code>left_join()</code> to join <code>MooseData2020</code> with the <code>Saplings</code> dataset, matching rows by the common <code>Ecoregion</code> column.</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="part-iii-creating-and-joining-datasets.html#cb9-1" tabindex="-1"></a>MooseSaplingData <span class="ot">&lt;-</span> <span class="fu">left_join</span>(Moosedata, SaplingData, <span class="at">by =</span> <span class="st">&#39;Ecoregion&#39;</span>, <span class="at">relationship =</span> <span class="st">&quot;many-to-many&quot;</span>)</span></code></pre></div>
+<p><strong>Question 22</strong></p>
+<p>Using the dataset you just created, calculate the average browsing score and average moose density for each species within each ecoregion, save your dataset under the name <code>BrowsingBySpeciesDensity</code>.<br />
+With the help of pipes <code>%&gt;%</code> , <code>group_by</code> <code>Species</code> and <code>Ecoregion</code>, then use <code>summarize()</code> to find the <code>mean()</code> <code>BrowsingScore</code>, and then find the <code>mean()</code> <code>MooseDensity</code>. Print the result using the <code>print()</code> function. <strong>HINT:</strong> There is example code using pipes <code>%&gt;%</code> in Questions 12 and 18 above.</p>
+<p><strong>Question 23</strong><br />
+The research team created the following figure to help visualize how average browsing intensity on different tree species changes with moose density across ecoregions. The graph uses the <code>ggplot2</code> package, which is beyond the scope of this assignment. However, if you would like, you can copy and paste the code below into your R console to explore the plot.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="part-iii-creating-and-joining-datasets.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="part-iii-creating-and-joining-datasets.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="part-iii-creating-and-joining-datasets.html#cb10-3" tabindex="-1"></a><span class="fu">ggplot</span>(BrowsingBySpeciesDensity, <span class="fu">aes</span>(<span class="at">x =</span> AvgDensity, <span class="at">y =</span> AvgBrowsing, <span class="at">color=</span> Species)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="part-iii-creating-and-joining-datasets.html#cb10-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="part-iii-creating-and-joining-datasets.html#cb10-5" tabindex="-1"></a>  </span>
+<span id="cb10-6"><a href="part-iii-creating-and-joining-datasets.html#cb10-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="part-iii-creating-and-joining-datasets.html#cb10-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Browsing Intensity Across Moose Density by Species&quot;</span>,</span>
+<span id="cb10-8"><a href="part-iii-creating-and-joining-datasets.html#cb10-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Average Moose Density&quot;</span>,</span>
+<span id="cb10-9"><a href="part-iii-creating-and-joining-datasets.html#cb10-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Browsing Score&quot;</span>)</span></code></pre></div>
+<p><img src="BIOL1002_NewRAssignment_files/figure-html/BrowsingIntensitySpecies_plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Based on the figure, answer the following questions using 1-2 sentences.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Is there evidence that supports the researchers’ hypothesis? Do moose show strong preferences at low density and shift to more generalist browsing at higher density? Add a short comment (1-2 sentences) with your answer.</li>
+</ol>
+<!-- -->
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Which sapling specie(s) do moose favour the most? Which do they browse the least? Add a short comment (1-2 sentences) with your answer.</li>
+</ol>
+<!-- -->
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Which sapling species is not shown on the figure and why? Add a short comment (1-2 sentences) with your answer.</li>
+</ol>
+<div id="moose-vehicle-collisions" class="section level3 hasAnchor" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Moose-vehicle collisions<a href="part-iii-creating-and-joining-datasets.html#moose-vehicle-collisions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As moose populations expanded across Newfoundland in the 20th century, so did the frequency of moose-vehicle collisions. These incidents pose serious risks to both humans and wildlife, especially in regions where roads intersect key moose habitat.<br />
+</p>
+<p>In this section, you’ll explore a simplified dataset containing the number of recorded moose-vehicle collisions per ecoregion in 2020. Your goal is to investigate whether moose density in an ecoregion can help explain collision patterns.</p>
+<p><strong>Question 24</strong><br />
+Copy and paste each vector below, then run them so they appear under your Values section in the Envionment.</p>
+<p>Then add a line of code (example given below) where you use the <code>data.frame()</code> function, create a dataset using your vectors called <code>MooseCollisions</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="part-iii-creating-and-joining-datasets.html#cb11-1" tabindex="-1"></a>Collisions_2020 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">56</span>, <span class="dv">60</span>, <span class="dv">14</span>, <span class="dv">36</span>, <span class="dv">48</span>, <span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">110</span>, <span class="dv">6</span>)</span>
+<span id="cb11-2"><a href="part-iii-creating-and-joining-datasets.html#cb11-2" tabindex="-1"></a>HumanPopulation <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18000</span>, <span class="dv">12000</span>, <span class="dv">4000</span>, <span class="dv">75100</span>, <span class="dv">24000</span>,<span class="dv">3500</span>, <span class="dv">32000</span>, <span class="dv">270000</span>,    <span class="dv">2300</span>)</span>
+<span id="cb11-3"><a href="part-iii-creating-and-joining-datasets.html#cb11-3" tabindex="-1"></a>StudySites <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;North_Shore_Forests&quot;</span>,<span class="st">&quot;Northern_Peninsula_Forests&quot;</span>, <span class="st">&quot;Long_Range_Barrens&quot;</span>,<span class="st">&quot;Central_Forests&quot;</span>,<span class="st">&quot;Western_Forests&quot;</span>,<span class="st">&quot;EasternHyperOceanicBarrens&quot;</span>,<span class="st">&quot;Maritime_Barrens&quot;</span>,<span class="st">&quot;Avalon_Forests&quot;</span>,<span class="st">&quot;StraitOfBelleIsleBarrens&quot;</span>)</span>
+<span id="cb11-4"><a href="part-iii-creating-and-joining-datasets.html#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="part-iii-creating-and-joining-datasets.html#cb11-5" tabindex="-1"></a>MooseCollisions <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(StudySites, HumanPopulation, Collisions_2020)</span></code></pre></div>
+<p><strong>Question 25</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Now let’s join this dataset with <code>Moosedata</code> filtered for just the year 2020 (from Part One, question 9). Try to use <code>left_join()</code> to join them. <strong>HINT:</strong> follow the template of the code you used above in question 21. Why does this not work?</p></li>
+<li><p>Use the <code>rename_with()</code> function, to change the column name of one of the datasets to match the other, so that they can be joined. Here is some template code that you can adapt to make the necessary change.</p>
+<p>Template: rename_with(NewName = OldName)</p></li>
+<li><p>Now join the datasets into a new dataset using <code>left_join()</code>. <strong>HINT:</strong> follow the template of the code you used above in question 21.</p></li>
+</ol>
+<p><strong>Question 26</strong><br />
+a. How does moose density relate to the number of moose-vehicle collisions? Use the <code>plot()</code> function to create a scatterplot of <code>MooseDensity</code> and <code>Collisions_2020</code></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>What trends do you see? Are there any outliers? Write 1-2 sentences as a comment.</li>
+</ol>
+<p><strong>Question 27</strong><br />
+Which ecoregions have the highest number of moose collisions per person? Create a new column called <code>CollisionsPerCapita</code> that is equal to <code>Collisions_2020</code> divided by <code>HumanPopulation</code>. <em>HINT:</em> Use the <code>mutate</code> function as you did in Part I, question 6, but with appropriate variables.</p>
+<p><strong>Question 28</strong><br />
+Use the <code>plot()</code> function to create a scatterplot of <code>CollisionsPerCapita</code> versus <code>HumanPopulation</code></p>
+<p><strong>Question 29</strong><br />
+Write 1-2 sentences describing what trends you see. Does this trend make sense based on what you know about moose and human populations in Newfoundland?</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="part-ii-tree-sapling-study.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["BIOL1002_NewRAssignment.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "download": "epub"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

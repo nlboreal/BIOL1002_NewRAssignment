@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | BIOL 1002: Moose Ecology Study</title>
+  <title>5 Part II: Tree Sapling Study | BIOL 1002: Moose Ecology Study</title>
   <meta name="description" content="R skills for first year Biology" />
   <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | BIOL 1002: Moose Ecology Study" />
+  <meta property="og:title" content="5 Part II: Tree Sapling Study | BIOL 1002: Moose Ecology Study" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="R skills for first year Biology" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | BIOL 1002: Moose Ecology Study" />
+  <meta name="twitter:title" content="5 Part II: Tree Sapling Study | BIOL 1002: Moose Ecology Study" />
   
   <meta name="twitter:description" content="R skills for first year Biology" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="part-i-moose-populations-in-newfoundland.html"/>
+<link rel="next" href="part-iii-creating-and-joining-datasets.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -174,19 +174,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="part-ii-tree-sapling-study" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Part II: Tree Sapling Study<a href="part-ii-tree-sapling-study.html#part-ii-tree-sapling-study" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this section we will be working with the <code>SaplingStudy</code> dataset. We are giving you less code here; but many of the tasks are similar to what you just completed in Part One. Your task is to adapt the code given above to these new datasets and questions.<br />
+</p>
+<p><strong>Dataset Overview:</strong> A team of researchers at MUN went to each ecoregion and sampled all the different tree saplings that grew that year. The goal of this study was to see if moose have browsing preference on sapling species. For each tree they recorded</p>
+<ul>
+<li><p>The height of the tree (cm)</p></li>
+<li><p>The moose browsing intensity: With 0 being no browsing by moose and 5 meaning severe browsing.<br />
+</p></li>
+</ul>
+<p><strong>Question 11</strong><br />
+a. <a href="https://ahurford.github.io/quant-guide-all-courses/data-entry.html#loading-or-importing-data">Load</a> the data file: <code>SaplingStudy.csv</code> and save your dataset to a name (e.g., Saplings).</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Then remove the <code>NA</code>s from the dataset using <code>na.omit()</code> function. Remember to save the cleaned version of your dataset to a new name (or override the old name).</li>
+</ol>
+<p><strong>Question 12</strong><br />
+a. How does moose browsing pressure vary across different ecoregions? With the help of <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes">pipes</a> <code>%&gt;%</code>, create a new database using the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#grouping"><code>group_by()</code></a> function to group the data by <code>Ecoregion</code>, and then use <code>summarize()</code> to calculate the <code>mean()</code> moose <code>BrowsingScore</code> for each site. Print the result using the <code>print()</code> function.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Add a comment <code>#</code> saying which ecoregion has the most moose browsing. Which ecoregion has the lowest?</li>
+</ol>
+<p><strong>Question 13</strong><br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>How does the average tree height vary across different ecoregions? With the help of <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes">pipes</a> <code>%&gt;%</code>, use the <code>group_by</code> function to group the data by <code>Ecoregion</code>, and then use <code>summarize()</code> to calculate the <code>mean()</code> tree <code>Height</code> for each group. Print the result using the <code>print()</code> function. <strong>HINT:</strong> Adapt the code from Question 12 above.</p></li>
+<li><p>The team considered average heights less than 20 cm to be severely browsed by moose. Add a short comment <code>#</code> to describe which ecoregions have average heights less than 20 cm. Do this by looking at your data or using a filter(). Print the result using the <code>print()</code> function.</p></li>
+</ol>
+<p><strong>Question 14</strong><br />
+a) How does the average browsing score vary across different tree sapling species? Use the <code>group_by</code> function to group the data by <code>Species</code>, and then use <code>summarize() to</code>calculate the <code>mean</code> tree <code>BrowsingScore</code> for each group. Print the result using the <code>print()</code> function. <strong>HINT:</strong> Adapt the code from Question 12.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Add a comment <code>#</code> saying which species has the highest browsing score, which species has the lowest?</li>
+</ol>
+<p><strong>Question 15</strong></p>
+<p>A team of researchers in interested in how Balsam Fir browsing intensity varies by ecoregion. With the help of pipes <code>%&gt;%</code>, use the <code>filter()</code> function to filter the <code>Species</code> column for only <code>Balsam_Fir</code>, then use <code>group_by()</code> function to sort by <code>Ecoregion</code> , and then determine <code>mean()</code> moose <code>BrowsingScore</code>. Remember to save the resulting summary table under a new name (E.g.,BalsamFir). <strong>HINT:</strong> Adapt the code from Question 12 above.</p>
+<p><strong>Question 16</strong><br />
+Using the <code>BalsamFir</code> dataset you created in Question 15, make a bar graph the <code>barplot()</code> function. Each bar should represent an ecoregion, and the height of the bar should reflect the average browsing intensity.</p>
+<p>Follow the template below and replace the placeholder names with the appropriate column names from your dataset.</p>
+<p><code>barplot(Dataset$YAxisColumn,          names.arg = Dataset$XAxisColumn,         xlab = "X-axis name goes here",         ylab = "Y-axis name goes here",         main = "Figure title goes here",         col = "forestgreen",  #pick any colour you want         cex.names = 0.6)  # Reduces x-axis label size for readability</code></p>
+<p><strong>Question 17</strong></p>
+<p>How does Black Spruce browsing intensity varies by ecoregion? Repeat the steps from question 15 and 16 but now with Black Spruce.</p>
+<ol style="list-style-type: lower-alpha">
+<li>With the help of pipes, use the <code>filter()</code> function to filter the <code>Species</code> column for only <code>Black_Spruce</code>, then use <code>group_by()</code> function to sort by <code>Ecoregion</code> , and then determine <code>mean()</code> moose <code>BrowsingScore</code>. Remember to save the resulting summary table under a new name (e.g., <code>BlackSpruce</code>).</li>
+</ol>
+<!-- -->
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Using the dataset you just created, make a bar graph the <code>barplot()</code> function to show the Average browsing score for Black Spruce across the ecoregions. Each bar should represent an ecoregion, and the height of the bar should reflect the average browsing intensity</li>
+</ol>
+<!-- -->
+<ol start="3" style="list-style-type: lower-alpha">
+<li>How does Black Spruce browsing compare to Balsam Fir browsing across ecoregions? Write 1-2 sentences as a comment <code>#</code> with your answer.</li>
+</ol>
+<p><strong>Question 18</strong><br />
+Were the same number of tree saplings counted in each Ecoregion?<br />
+Add a line of code where you use the <code>group_by()</code> function and the <code>tally()</code> function to determine how many trees were counted in each <code>Ecoregion</code>?</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-ii-tree-sapling-study.html#cb8-1" tabindex="-1"></a>EcoregionTally<span class="ot">&lt;-</span> SaplingData <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="part-ii-tree-sapling-study.html#cb8-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Ecoregion) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="part-ii-tree-sapling-study.html#cb8-3" tabindex="-1"></a>  <span class="fu">tally</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="part-ii-tree-sapling-study.html#cb8-4" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
+<p><strong>Question 19</strong><br />
+Were the same number of tree saplings counted for each species? Add a line of code where you use the <code>tally()</code> function to determine how many individual trees were counted in for each <code>Species</code>? <strong>HINT:</strong> Adapt the code from Question 18 above.</p>
+<p><strong>Question 20</strong><br />
+In any ecological study, it’s important to ask whether the dataset accurately reflects the system you’re trying to understand. In this question, you’ll evaluate whether sampling bias may be affecting your interpretation of moose browsing patterns.</p>
+<p>a. Add a short comment # saying if you think the <code>SaplingStudy</code> dataset is evenly distributed. Are any ecoregion(s) or tree species overrepresented, are any underepresented in the dataset.</p>
+<p>b. Why is it important to recognize bias in ecological datasets. Write 1-2 sentences as a comment <code>#</code> with your answer.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="part-i-moose-populations-in-newfoundland.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="part-iii-creating-and-joining-datasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

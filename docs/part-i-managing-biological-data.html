@@ -261,11 +261,6 @@ The research team was interested in trends for all ecoregions for just recent ye
 <ol start="3" style="list-style-type: lower-alpha">
 <li>With the dataset you just created, use the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#sorting-the-data"><code>arrange()</code></a> function to sort the <code>MooseDensity</code> column in descending order. Template: <code>arrange(Dataset, desc(ColumnName))</code></li>
 </ol>
-<pre><code>##                    Ecoregion Year  Area Estimated_Moose_Pop MooseDensity
-## 1 Northern_Peninsula_Forests 2020 12000               32000     2.666667
-## 2        North_Shore_Forests 2020  8400               21740     2.588095
-## 3            Western_Forests 2020  6800               17000     2.500000
-## 4            Central_Forests 2020 20500               41250     2.012195</code></pre>
 <p><strong>Question 10</strong><br />
 Pipes <code>%&gt;%</code> allow you to connect one line of code to the next, so you don’t have to save the dataset under a new name for each step.<br />
 Repeat the steps from the previous question using a pipe at the end of each line. Using your inital dataset, <code>filter()</code> for the year <code>2020</code>, then <code>filter()</code> for <code>MooseDensity</code> above <code>2.0</code>, then <code>arrange()</code> in <code>desc()</code> order, then finally <code>print()</code> the output.</p>
@@ -336,6 +331,10 @@ Using the <code>BalsamFir</code> dataset you created in Question 15, make a bar 
 <p><strong>Question 18</strong><br />
 Were the same number of tree saplings counted in each Ecoregion?<br />
 Add a line of code where you use the <code>group_by()</code> function and the <code>tally()</code> function to determine how many trees were counted in each <code>Ecoregion</code>?</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-i-managing-biological-data.html#cb8-1" tabindex="-1"></a>EcoregionTally<span class="ot">&lt;-</span> SaplingData <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="part-i-managing-biological-data.html#cb8-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Ecoregion) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="part-i-managing-biological-data.html#cb8-3" tabindex="-1"></a>  <span class="fu">tally</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="part-i-managing-biological-data.html#cb8-4" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 2
 ##   Ecoregion                      n
 ##   &lt;chr&gt;                      &lt;int&gt;
@@ -403,8 +402,7 @@ Copy and paste each vector below, then run them so they appear under your Values
 <span id="cb11-3"><a href="part-i-managing-biological-data.html#cb11-3" tabindex="-1"></a>StudySites <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;North_Shore_Forests&quot;</span>,<span class="st">&quot;Northern_Peninsula_Forests&quot;</span>, <span class="st">&quot;Long_Range_Barrens&quot;</span>,<span class="st">&quot;Central_Forests&quot;</span>,<span class="st">&quot;Western_Forests&quot;</span>,<span class="st">&quot;EasternHyperOceanicBarrens&quot;</span>,<span class="st">&quot;Maritime_Barrens&quot;</span>,<span class="st">&quot;Avalon_Forests&quot;</span>,<span class="st">&quot;StraitOfBelleIsleBarrens&quot;</span>)</span>
 <span id="cb11-4"><a href="part-i-managing-biological-data.html#cb11-4" tabindex="-1"></a></span>
 <span id="cb11-5"><a href="part-i-managing-biological-data.html#cb11-5" tabindex="-1"></a>MooseCollisions <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(StudySites, HumanPopulation, Collisions_2020)</span></code></pre></div>
-<p><strong>Question 25</strong> left_join<br />
-</p>
+<p><strong>Question 25</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Now let’s join this dataset with <code>Moosedata</code> filtered for just the year 2020 (from Part One, question 9). Try to use <code>left_join()</code> to join them. <em>HINT:</em> follow the template of the code you used above in Pquestion 21. Why does this not work?</p></li>
 <li><p>Use the <code>rename_with()</code> function, to change the column name of one of the datasets to match the other, so that they can be joined. Here is some template code that you can adapt to make the necessary change.</p>
@@ -474,7 +472,7 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": null,
+  "download": ["BIOL1002_NewRAssignment.epub"],
   "search": {
     "engine": "fuse",
     "options": null

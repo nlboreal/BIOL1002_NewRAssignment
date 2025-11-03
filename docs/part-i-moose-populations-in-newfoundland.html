@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Part I: Moose Populations in Newfoundland | BIOL 1002: Moose Ecology Study</title>
+  <meta name="description" content="R skills for first year Biology" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Part I: Moose Populations in Newfoundland | BIOL 1002: Moose Ecology Study" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="R skills for first year Biology" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Part I: Moose Populations in Newfoundland | BIOL 1002: Moose Ecology Study" />
+  
+  <meta name="twitter:description" content="R skills for first year Biology" />
+  
+
+<meta name="author" content="Elizabeth Mack and Yolanda Wiersma" />
+
+
+<meta name="date" content="2025-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="managing-biological-data.html"/>
+<link rel="next" href="part-ii-tree-sapling-study.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BIOL1002_NewRAssignment</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> This is a manual for Biology 1002 students</a></li>
+<li class="chapter" data-level="2" data-path="before-you-start-please-do-the-following.html"><a href="before-you-start-please-do-the-following.html"><i class="fa fa-check"></i><b>2</b> Before you start, please do the following:</a></li>
+<li class="chapter" data-level="3" data-path="managing-biological-data.html"><a href="managing-biological-data.html"><i class="fa fa-check"></i><b>3</b> Managing biological data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="managing-biological-data.html"><a href="managing-biological-data.html#assignment-overview"><i class="fa fa-check"></i><b>3.1</b> Assignment Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="managing-biological-data.html"><a href="managing-biological-data.html#datasets-overview"><i class="fa fa-check"></i><b>3.2</b> Datasets Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="part-i-moose-populations-in-newfoundland.html"><a href="part-i-moose-populations-in-newfoundland.html"><i class="fa fa-check"></i><b>4</b> Part I: Moose Populations in Newfoundland</a></li>
+<li class="chapter" data-level="5" data-path="part-ii-tree-sapling-study.html"><a href="part-ii-tree-sapling-study.html"><i class="fa fa-check"></i><b>5</b> Part II: Tree Sapling Study</a></li>
+<li class="chapter" data-level="6" data-path="part-iii-creating-and-joining-datasets.html"><a href="part-iii-creating-and-joining-datasets.html"><i class="fa fa-check"></i><b>6</b> Part III: Creating and Joining Datasets</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="part-iii-creating-and-joining-datasets.html"><a href="part-iii-creating-and-joining-datasets.html#moose-vehicle-collisions"><i class="fa fa-check"></i><b>6.0.1</b> Moose-vehicle collisions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL 1002: Moose Ecology Study</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="part-i-moose-populations-in-newfoundland" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Part I: Moose Populations in Newfoundland<a href="part-i-moose-populations-in-newfoundland.html#part-i-moose-populations-in-newfoundland" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Question 1</strong><br />
+<a href="https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages">Install</a> the <code>dplyr</code> package using <code>install.packages()</code> function. You only need to do this once.<br />
+Then, use the <code>library()</code> function to load <code>dplyr</code> so that its functions are available to use.</p>
+<p><strong>Question 2</strong> read.csv()<br />
+Next <a href="https://ahurford.github.io/quant-guide-all-courses/data-entry.html#loading-or-importing-data">import</a> the <code>MoosePopulation.csv</code> dataset. You may call your dataset <code>Moosedata</code> or give it a different name. If you use the programmatic way (i.e., command line), your command may look something like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="part-i-moose-populations-in-newfoundland.html#cb1-1" tabindex="-1"></a>Moosedata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;MoosePopulation.csv&quot;</span>)</span></code></pre></div>
+<p><strong>Question 3</strong><br />
+Take a moment to look through the data you just imported by using <code>View()</code> function. You might notice that some cells are empty or “NA” — these are missing values. When dealing with large biological datasets, it is common to start by removing missing data.<br />
+</p>
+<p>Write a line of code where you use <code>na.omit()</code> to remove rows with missing values. <strong>Remember to save</strong> your dataset with the cleaned version with a new name (or you can overwrite the old one, as in the example code below).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="part-i-moose-populations-in-newfoundland.html#cb2-1" tabindex="-1"></a>Moosedata <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(Moosedata)</span></code></pre></div>
+<p><strong>Question 4</strong><br />
+Next, let’s simplify the dataset to only include the columns of interest. Add a line of code where you use the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#selecting-a-column"><code>select()</code></a> function to select the following columns: <code>Ecoregion</code>, <code>Year</code>, <code>Area</code>, <code>Estimated_Moose_Pop</code>.</p>
+<p><strong>Remember to save</strong> your dataset with the only the above data with a new name (or you can overwrite the old one, as in the example code below).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="part-i-moose-populations-in-newfoundland.html#cb3-1" tabindex="-1"></a>Moosedata <span class="ot">&lt;-</span> <span class="fu">select</span>(Moosedata, Ecoregion, Year, Area, Estimated_Moose_Pop)</span></code></pre></div>
+<p><strong>Question 5</strong><br />
+a. What is the oldest observation in the dataset? Add a line where you use the <code>min()</code> function to find the oldest <code>Year</code>. Then write your answer as a comment <code>#</code>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Use the <code>max()</code> function to what is the highest ‘Estimated_Moose_Pop’ was recorded? Then write your answer as a comment <code>#</code>. Is this number for a particular ecoregion or for all of Newfoundland?</li>
+</ol>
+<p><strong>Question 6</strong><br />
+Different ecoregions cover different land areas, so comparing raw population numbers is not very helpful. Standardize your data by calculating moose density for each ecoregion. Using the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#adding-a-new-column"><code>mutate()</code></a> function, create a new column called <code>MooseDensity</code>. Remember density is equal to population divided by area.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="part-i-moose-populations-in-newfoundland.html#cb4-1" tabindex="-1"></a>Moosedata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(Moosedata, <span class="at">MooseDensity =</span> Estimated_Moose_Pop <span class="sc">/</span> Area)</span></code></pre></div>
+<p><strong>Question 7</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Now, let’s visualize the data. Using the <a href="https://ahurford.github.io/quant-guide-all-courses/graph.html#scatter-plots-with-plotxy"><code>plot()</code></a> function, make a line graph to show the the changes in <code>MooseDensity</code> over <code>Year</code>. Full marks for including axis labels and figure title ( <code>xlab</code> , <code>ylab</code> , <code>main</code>).</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="part-i-moose-populations-in-newfoundland.html#cb5-1" tabindex="-1"></a><span class="fu">plot</span>(Moosedata<span class="sc">$</span>Year, Moosedata<span class="sc">$</span>MooseDensity, </span>
+<span id="cb5-2"><a href="part-i-moose-populations-in-newfoundland.html#cb5-2" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;year&quot;</span>, </span>
+<span id="cb5-3"><a href="part-i-moose-populations-in-newfoundland.html#cb5-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Moose per sq km&quot;</span>, </span>
+<span id="cb5-4"><a href="part-i-moose-populations-in-newfoundland.html#cb5-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Moose density in Newfoundland ecoregions over time&quot;</span>)</span></code></pre></div>
+<p><strong>Question 8</strong><br />
+The research team were particularly interested in how moose populations have changed over time in the Western Forests Ecoregion.<br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li>Create a new dataset, where you use the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#filtering-data"><code>filter()</code></a> function to only include observations from the <code>Western_Forests</code> ecoregion.</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="part-i-moose-populations-in-newfoundland.html#cb6-1" tabindex="-1"></a>MooseDataWest <span class="ot">&lt;-</span> <span class="fu">filter</span>(Moosedata, Ecoregion <span class="sc">==</span> <span class="st">&quot;Western_Forests&quot;</span>)</span></code></pre></div>
+<p><br />
+b) Use the <code>plot()</code> function to make a <a href="https://ahurford.github.io/quant-guide-all-courses/graph.html#line-graphs">line graph</a> (<code>type = "l"</code>) showing how moose density has changed over time in Western_Forests region. Full marks for including axis labels and figure title ( <code>xlab</code> , <code>ylab</code> , <code>main</code>). <strong>HINT:</strong> Adapt the code given to you in Question 7 above.</p>
+<p><strong>Question 9</strong><br />
+The research team was interested in trends for all ecoregions for just recent years.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Using the <strong>original, unfiltered dataset you created in Question 6 above</strong>, use the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#filtering-data"><code>filter()</code></a> function to filter for the year <code>2020</code>, and save the dataset under a new name (e.g., MooseData_2020). <strong>HINT:</strong> Adapt the code given to you in Question 8 above.</li>
+</ol>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>The research team considered moose densities above 2.0 moose/km² to be high. Using the dataset you just created, <code>filter()</code> the <code>MooseDensity</code> to only show ecoregions where moose density is greater than 2.0. Save the dataset under a new name (e.g., MooseData_2020_b). <strong>HINT:</strong> Adapt the code given to you in Question 8.</li>
+</ol>
+<!-- -->
+<ol start="3" style="list-style-type: lower-alpha">
+<li>With the dataset you just created, use the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#sorting-the-data"><code>arrange()</code></a> function to sort the <code>MooseDensity</code> column in descending order. <strong>HINT:</strong> You can follow this template:</li>
+</ol>
+<p><code>arrange(Dataset, desc(ColumnName))</code></p>
+<p><strong>Question 10</strong><br />
+Pipes <code>%&gt;%</code> allow you to connect one line of code to the next, so you don’t have to save the dataset under a new name for each step.<br />
+Repeat the steps from the previous question using a pipe at the end of each line. Using your inital dataset, <code>filter()</code> for the year <code>2020</code>, then <code>filter()</code> for <code>MooseDensity</code> above <code>2.0</code>, then <code>arrange()</code> in <code>desc()</code> order, then finally <code>print()</code> the output. Code showing how to use pipes <code>%&gt;%</code> is below, however you may need to adapt it to the way you have named your dataframes.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="part-i-moose-populations-in-newfoundland.html#cb7-1" tabindex="-1"></a>MooseData_final <span class="ot">&lt;-</span> Moosedata <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="part-i-moose-populations-in-newfoundland.html#cb7-2" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="part-i-moose-populations-in-newfoundland.html#cb7-3" tabindex="-1"></a>  <span class="fu">filter</span>(MooseDensity <span class="sc">&gt;</span> <span class="fl">2.0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="part-i-moose-populations-in-newfoundland.html#cb7-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(MooseDensity)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="part-i-moose-populations-in-newfoundland.html#cb7-5" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
+<hr />
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="managing-biological-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="part-ii-tree-sapling-study.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["BIOL1002_NewRAssignment.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "download": "epub"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
