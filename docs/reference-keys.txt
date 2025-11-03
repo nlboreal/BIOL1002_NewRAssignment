@@ -1,10 +1,9 @@
 this-is-a-manual-for-biology-1002-students
 before-you-start-please-do-the-following
-part-i-managing-biological-data
+managing-biological-data
 assignment-overview
 datasets-overview
 part-i-moose-populations-in-newfoundland
 part-ii-tree-sapling-study
 part-iii-creating-and-joining-datasets
 moose-vehicle-collisions
-managing-biological-data
