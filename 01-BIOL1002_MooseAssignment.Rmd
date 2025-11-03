@@ -123,7 +123,7 @@ Moosedata <- read.csv("MoosePopulation.csv")
 ```
 
 **Question 3**\
-Take a moment to look through the data you just imported by using `View()` function. You might notice that some cells are empty or “NA” — these are missing values. When dealing with large biological datasets, it is common to start by removing missing data.\
+Take a moment to look through the data you just imported by using `View()` function. You might notice that some cells are empty or “NA” — these are missing values. When dealing with large biological datasets, it is common to start by removing missing data.
 
 Write a line of code where you use `na.omit()` to remove rows with missing values. **Remember to save** your dataset with the cleaned version with a new name (or you can overwrite the old one, as in the example code below).
 

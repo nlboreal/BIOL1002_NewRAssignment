@@ -3,7 +3,7 @@
     "path": "~/BIOL1002/BIOL1002_NewRAssignment/01-BIOL1002_MooseAssignment.Rmd",
     "project_path": "01-BIOL1002_MooseAssignment.Rmd",
     "type": "r_markdown",
-    "hash": "3529676089",
+    "hash": "470385072",
     "contents": "",
     "dirty": false,
     "created": 1761745631208.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "216,35",
-        "scrollLine": "256",
+        "cursorPosition": "125,256",
+        "scrollLine": "115",
         "last_setup_crc32": ""
     },
     "folds": "",
-    "lastKnownWriteTime": 1762174558,
+    "lastKnownWriteTime": 1762175154,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1762174560824,
+    "last_content_update": 1762175154701,
     "read_only": false,
     "read_only_alternatives": []
 }
