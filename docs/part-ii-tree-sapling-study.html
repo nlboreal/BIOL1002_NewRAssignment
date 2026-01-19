@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -185,28 +184,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p></li>
 </ul>
 <p><strong>Question 11</strong><br />
-a. <a href="https://ahurford.github.io/quant-guide-all-courses/data-entry.html#loading-or-importing-data">Load</a> the data file: <code>SaplingStudy.csv</code> and save your dataset to a name (e.g., Saplings).</p>
+a. <a href="https://ahurford.github.io/quant-guide-all-courses/data-entry.html#loading-or-importing-data">Load</a> the data file: <code>SaplingStudy.csv</code> and save your dataset as <code>saplings</code>.</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Then remove the <code>NA</code>s from the dataset using <code>na.omit()</code> function. Remember to save the cleaned version of your dataset to a new name (or override the old name).</li>
+<li>Then remove the <code>NA</code>s from the dataset using <code>na.omit()</code> function. Remember to save the cleaned version of your dataset to a new name (or override the old name). Save as <code>sap_clean</code>.</li>
 </ol>
 <p><strong>Question 12</strong><br />
-a. How does moose browsing pressure vary across different ecoregions? With the help of <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes">pipes</a> <code>%&gt;%</code>, create a new database using the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#grouping"><code>group_by()</code></a> function to group the data by <code>Ecoregion</code>, and then use <code>summarize()</code> to calculate the <code>mean()</code> moose <code>BrowsingScore</code> for each site. Print the result using the <code>print()</code> function.</p>
+a. How does moose browsing pressure vary across different ecoregions? With the help of <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes">pipes</a> <code>%&gt;%</code>, create a new database using the <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#grouping"><code>group_by()</code></a> function to group the data by <code>Ecoregion</code>, and then use <code>summarize()</code> to calculate the <code>mean()</code> moose <code>BrowsingScore</code> for each site. Print the result using the <code>print()</code> function. Save the result as <code>sap_reg_browse</code>. <strong>HINT:</strong> Remember to use your cleaned dataset from the question above.</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Add a comment <code>#</code> saying which ecoregion has the most moose browsing. Which ecoregion has the lowest?</li>
+<li>Which ecoregions have the highest and lowest amount of moose browsing? Rearrange your dataset in order of decreasing average browsing score <code>AverageBrowsing</code>. Save the result as <code>avg_browse_reg</code>. Add a short comment <code>#</code> indicating which regions had the highest and lowest average browsing scores.</li>
 </ol>
 <p><strong>Question 13</strong><br />
 </p>
 <ol style="list-style-type: lower-alpha">
-<li><p>How does the average tree height vary across different ecoregions? With the help of <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes">pipes</a> <code>%&gt;%</code>, use the <code>group_by</code> function to group the data by <code>Ecoregion</code>, and then use <code>summarize()</code> to calculate the <code>mean()</code> tree <code>Height</code> for each group. Print the result using the <code>print()</code> function. <strong>HINT:</strong> Adapt the code from Question 12 above.</p></li>
-<li><p>The team considered average heights less than 20 cm to be severely browsed by moose. Add a short comment <code>#</code> to describe which ecoregions have average heights less than 20 cm. Do this by looking at your data or using a filter(). Print the result using the <code>print()</code> function.</p></li>
+<li><p>How does the average tree height vary across different ecoregions? With the help of <a href="https://ahurford.github.io/quant-guide-all-courses/handling-data.html#pipes">pipes</a> <code>%&gt;%</code>, use the <code>group_by</code> function to group the data by <code>Ecoregion</code>, and then use <code>summarize()</code> to calculate the <code>mean()</code> tree <code>Height</code> for each group. Print the result using the <code>print()</code> function. Save the result as <code>sap_reg_height</code>. <strong>HINT:</strong> Adapt the code from Question 12 above.</p></li>
+<li><p>The team considered average heights less than 20 cm to be severely browsed by moose. Add a short comment <code>#</code> to describe which ecoregions have average heights less than 20 cm. Do this by looking at your data or using a filter(). Print the result using the <code>print()</code> function. Save the result as <code>sap_reg_height_low</code>.</p></li>
 </ol>
 <p><strong>Question 14</strong><br />
-a) How does the average browsing score vary across different tree sapling species? Use the <code>group_by</code> function to group the data by <code>Species</code>, and then use <code>summarize() to</code>calculate the <code>mean</code> tree <code>BrowsingScore</code> for each group. Print the result using the <code>print()</code> function. <strong>HINT:</strong> Adapt the code from Question 12.</p>
+a) How does the average browsing score vary across different tree sapling species? Use the <code>group_by</code> function to group the data by <code>Species</code>, and then use <code>summarize() to</code>calculate the <code>mean</code> tree <code>BrowsingScore</code> for each group. Print the result using the <code>print()</code> function. Save the result as <code>sap_spe_browse</code>. <strong>HINT:</strong> Adapt the code from Question 12.</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Add a comment <code>#</code> saying which species has the highest browsing score, which species has the lowest?</li>
+<li>Which species have the highest and lowest browsing? Rearrange the data according to decreasing mean browsing score. Save the rearranged results as <code>avg_browse_spe</code>. Add a comment <code>#</code> saying which species has the highest browsing score, which species has the lowest?</li>
 </ol>
 <p><strong>Question 15</strong></p>
-<p>A team of researchers in interested in how Balsam Fir browsing intensity varies by ecoregion. With the help of pipes <code>%&gt;%</code>, use the <code>filter()</code> function to filter the <code>Species</code> column for only <code>Balsam_Fir</code>, then use <code>group_by()</code> function to sort by <code>Ecoregion</code> , and then determine <code>mean()</code> moose <code>BrowsingScore</code>. Remember to save the resulting summary table under a new name (E.g.,BalsamFir). <strong>HINT:</strong> Adapt the code from Question 12 above.</p>
+<p>A team of researchers in interested in how Balsam Fir browsing intensity varies by ecoregion. With the help of pipes <code>%&gt;%</code>, use the <code>filter()</code> function to filter the <code>Species</code> column for only <code>Balsam_Fir</code>, then use <code>group_by()</code> function to sort by <code>Ecoregion</code> , and then determine <code>mean()</code> moose <code>BrowsingScore</code>. Save the resulting summary table as <code>fir_reg_browse</code>. <strong>HINT:</strong> Adapt the code from Question 12 above.</p>
 <p><strong>Question 16</strong><br />
 Using the <code>BalsamFir</code> dataset you created in Question 15, make a bar graph the <code>barplot()</code> function. Each bar should represent an ecoregion, and the height of the bar should reflect the average browsing intensity.</p>
 <p>Follow the template below and replace the placeholder names with the appropriate column names from your dataset.</p>
@@ -214,7 +213,7 @@ Using the <code>BalsamFir</code> dataset you created in Question 15, make a bar 
 <p><strong>Question 17</strong></p>
 <p>How does Black Spruce browsing intensity varies by ecoregion? Repeat the steps from question 15 and 16 but now with Black Spruce.</p>
 <ol style="list-style-type: lower-alpha">
-<li>With the help of pipes, use the <code>filter()</code> function to filter the <code>Species</code> column for only <code>Black_Spruce</code>, then use <code>group_by()</code> function to sort by <code>Ecoregion</code> , and then determine <code>mean()</code> moose <code>BrowsingScore</code>. Remember to save the resulting summary table under a new name (e.g., <code>BlackSpruce</code>).</li>
+<li>With the help of pipes, use the <code>filter()</code> function to filter the <code>Species</code> column for only <code>Black_Spruce</code>, then use <code>group_by()</code> function to sort by <code>Ecoregion</code> , and then determine <code>mean()</code> moose <code>BrowsingScore</code>. Save the resulting summary table as <code>spruce_reg_browse</code>.</li>
 </ol>
 <!-- -->
 <ol start="2" style="list-style-type: lower-alpha">
@@ -226,13 +225,13 @@ Using the <code>BalsamFir</code> dataset you created in Question 15, make a bar 
 </ol>
 <p><strong>Question 18</strong><br />
 Were the same number of tree saplings counted in each Ecoregion?<br />
-Add a line of code where you use the <code>group_by()</code> function and the <code>tally()</code> function to determine how many trees were counted in each <code>Ecoregion</code>?</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-ii-tree-sapling-study.html#cb8-1" tabindex="-1"></a>EcoregionTally<span class="ot">&lt;-</span> SaplingData <span class="sc">%&gt;%</span></span>
+Add a line of code where you use the <code>group_by()</code> function and the <code>tally()</code> function to determine how many trees were counted in each <code>Ecoregion</code>. Save the result as <code>sap_reg_tally</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-ii-tree-sapling-study.html#cb8-1" tabindex="-1"></a>sap_reg_tally<span class="ot">&lt;-</span> sap_clean <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="part-ii-tree-sapling-study.html#cb8-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Ecoregion) <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a href="part-ii-tree-sapling-study.html#cb8-3" tabindex="-1"></a>  <span class="fu">tally</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb8-4"><a href="part-ii-tree-sapling-study.html#cb8-4" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
 <p><strong>Question 19</strong><br />
-Were the same number of tree saplings counted for each species? Add a line of code where you use the <code>tally()</code> function to determine how many individual trees were counted in for each <code>Species</code>? <strong>HINT:</strong> Adapt the code from Question 18 above.</p>
+Were the same number of tree saplings counted for each species? Add a line of code where you use the <code>tally()</code> function to determine how many individual trees were counted in for each <code>Species</code>. Save the result as <code>sap_spe_tally</code>. <strong>HINT:</strong> Adapt the code from Question 18 above.</p>
 <p><strong>Question 20</strong><br />
 In any ecological study, it’s important to ask whether the dataset accurately reflects the system you’re trying to understand. In this question, you’ll evaluate whether sampling bias may be affecting your interpretation of moose browsing patterns.</p>
 <p>a. Add a short comment # saying if you think the <code>SaplingStudy</code> dataset is evenly distributed. Are any ecoregion(s) or tree species overrepresented, are any underepresented in the dataset.</p>
