@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -177,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="part-iii-creating-and-joining-datasets" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Part III: Creating and Joining Datasets<a href="part-iii-creating-and-joining-datasets.html#part-iii-creating-and-joining-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Moose density and browsing preferences</p>
-<p>The team of researchers we curious if moose browsing preferences changed depending on moose density. They hypothesized that at</p>
+<p>The team of researchers were curious if moose browsing preferences changed depending on moose density. They hypothesized that at</p>
 <ul>
 <li><p><strong>At low moose densities:</strong> browsing would be selective, with moose favoring the most palatable tree species.</p></li>
 <li><p><strong>At high moose densities:</strong> Would have high competition, and browsing pressure would become less selective, with moose consuming all sapling species more uniformly.<br />
@@ -185,20 +184,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>In this section, we will merge the <code>Moosedata</code>and the <code>Sapling</code> datasets, to explore how browsing intensity on different tree species correlates with moose density across ecoregions. You will practice using the left_join() function to combine these dataset</p>
 <p><strong>Question 21</strong><br />
-a) Using the orginal <code>Moosedata</code> dataset, <code>filter()</code> function to select only the rows for the year <code>2020</code>. Then create a new column called <code>MooseDensity</code> using the <code>mutate()</code> function. Save the dataset under a new name called <code>MooseData_2020</code>. (<strong>HINT:</strong> you previously did this for question 9)<br />
+a) Using the original <code>moose_clean</code> dataset, <code>filter()</code> function to select only the rows for the year <code>2020</code>. Then create a new column called <code>MooseDensity</code> using the <code>mutate()</code> function. Save the dataset under a new name called <code>moose_2020b</code>. (<strong>HINT:</strong> you previously did this for question 9)<br />
 </p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Use <code>left_join()</code> to join <code>MooseData2020</code> with the <code>Saplings</code> dataset, matching rows by the common <code>Ecoregion</code> column.</li>
+<li>Use <code>left_join()</code> to join <code>moose_2020b</code> with the <code>sap_clean</code> dataset, matching rows by the common <code>Ecoregion</code> column. Save the result as <code>moose_sap</code>.</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="part-iii-creating-and-joining-datasets.html#cb9-1" tabindex="-1"></a>MooseSaplingData <span class="ot">&lt;-</span> <span class="fu">left_join</span>(Moosedata, SaplingData, <span class="at">by =</span> <span class="st">&#39;Ecoregion&#39;</span>, <span class="at">relationship =</span> <span class="st">&quot;many-to-many&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="part-iii-creating-and-joining-datasets.html#cb9-1" tabindex="-1"></a>moose_sap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(moose_2020b, sap_clean, <span class="at">by =</span> <span class="st">&#39;Ecoregion&#39;</span>, <span class="at">relationship =</span> <span class="st">&quot;many-to-many&quot;</span>)</span></code></pre></div>
 <p><strong>Question 22</strong></p>
-<p>Using the dataset you just created, calculate the average browsing score and average moose density for each species within each ecoregion, save your dataset under the name <code>BrowsingBySpeciesDensity</code>.<br />
-With the help of pipes <code>%&gt;%</code> , <code>group_by</code> <code>Species</code> and <code>Ecoregion</code>, then use <code>summarize()</code> to find the <code>mean()</code> <code>BrowsingScore</code>, and then find the <code>mean()</code> <code>MooseDensity</code>. Print the result using the <code>print()</code> function. <strong>HINT:</strong> There is example code using pipes <code>%&gt;%</code> in Questions 12 and 18 above.</p>
+<p>Using the dataset you just created, calculate the average browsing score and average moose density for each species within each ecoregion.</p>
+<p>With the help of pipes <code>%&gt;%</code> , <code>group_by</code> <code>Species</code> and <code>Ecoregion</code>, then use <code>summarize()</code> to find the <code>mean()</code> <code>BrowsingScore</code>, and then find the <code>mean()</code> <code>MooseDensity</code>. Print the result using the <code>print()</code> function. Save the result as <code>sum_spe_browse</code>. <strong>HINT:</strong> There is example code using pipes <code>%&gt;%</code> in Questions 12 and 18 above.</p>
 <p><strong>Question 23</strong><br />
 The research team created the following figure to help visualize how average browsing intensity on different tree species changes with moose density across ecoregions. The graph uses the <code>ggplot2</code> package, which is beyond the scope of this assignment. However, if you would like, you can copy and paste the code below into your R console to explore the plot.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="part-iii-creating-and-joining-datasets.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb10-2"><a href="part-iii-creating-and-joining-datasets.html#cb10-2" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="part-iii-creating-and-joining-datasets.html#cb10-3" tabindex="-1"></a><span class="fu">ggplot</span>(BrowsingBySpeciesDensity, <span class="fu">aes</span>(<span class="at">x =</span> AvgDensity, <span class="at">y =</span> AvgBrowsing, <span class="at">color=</span> Species)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="part-iii-creating-and-joining-datasets.html#cb10-3" tabindex="-1"></a><span class="fu">ggplot</span>(sum_spe_browse, <span class="fu">aes</span>(<span class="at">x =</span> AvgDensity, <span class="at">y =</span> AvgBrowsing, <span class="at">color=</span> Species)) <span class="sc">+</span></span>
 <span id="cb10-4"><a href="part-iii-creating-and-joining-datasets.html#cb10-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb10-5"><a href="part-iii-creating-and-joining-datasets.html#cb10-5" tabindex="-1"></a>  </span>
 <span id="cb10-6"><a href="part-iii-creating-and-joining-datasets.html#cb10-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -225,28 +224,28 @@ The research team created the following figure to help visualize how average bro
 <p>In this section, you’ll explore a simplified dataset containing the number of recorded moose-vehicle collisions per ecoregion in 2020. Your goal is to investigate whether moose density in an ecoregion can help explain collision patterns.</p>
 <p><strong>Question 24</strong><br />
 Copy and paste each vector below, then run them so they appear under your Values section in the Envionment.</p>
-<p>Then add a line of code (example given below) where you use the <code>data.frame()</code> function, create a dataset using your vectors called <code>MooseCollisions</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="part-iii-creating-and-joining-datasets.html#cb11-1" tabindex="-1"></a>Collisions_2020 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">56</span>, <span class="dv">60</span>, <span class="dv">14</span>, <span class="dv">36</span>, <span class="dv">48</span>, <span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">110</span>, <span class="dv">6</span>)</span>
-<span id="cb11-2"><a href="part-iii-creating-and-joining-datasets.html#cb11-2" tabindex="-1"></a>HumanPopulation <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18000</span>, <span class="dv">12000</span>, <span class="dv">4000</span>, <span class="dv">75100</span>, <span class="dv">24000</span>,<span class="dv">3500</span>, <span class="dv">32000</span>, <span class="dv">270000</span>,    <span class="dv">2300</span>)</span>
-<span id="cb11-3"><a href="part-iii-creating-and-joining-datasets.html#cb11-3" tabindex="-1"></a>StudySites <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;North_Shore_Forests&quot;</span>,<span class="st">&quot;Northern_Peninsula_Forests&quot;</span>, <span class="st">&quot;Long_Range_Barrens&quot;</span>,<span class="st">&quot;Central_Forests&quot;</span>,<span class="st">&quot;Western_Forests&quot;</span>,<span class="st">&quot;EasternHyperOceanicBarrens&quot;</span>,<span class="st">&quot;Maritime_Barrens&quot;</span>,<span class="st">&quot;Avalon_Forests&quot;</span>,<span class="st">&quot;StraitOfBelleIsleBarrens&quot;</span>)</span>
+<p>Then add a line of code (example given below) where you use the <code>data.frame()</code> function to create a dataset using your vectors. Save this dataset as <code>moose_coll</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="part-iii-creating-and-joining-datasets.html#cb11-1" tabindex="-1"></a>collisions2020 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">56</span>, <span class="dv">60</span>, <span class="dv">14</span>, <span class="dv">36</span>, <span class="dv">48</span>, <span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">110</span>, <span class="dv">6</span>)</span>
+<span id="cb11-2"><a href="part-iii-creating-and-joining-datasets.html#cb11-2" tabindex="-1"></a>human_pop <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18000</span>, <span class="dv">12000</span>, <span class="dv">4000</span>, <span class="dv">75100</span>, <span class="dv">24000</span>,<span class="dv">3500</span>, <span class="dv">32000</span>, <span class="dv">270000</span>,    <span class="dv">2300</span>)</span>
+<span id="cb11-3"><a href="part-iii-creating-and-joining-datasets.html#cb11-3" tabindex="-1"></a>study_sites <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;North_Shore_Forests&quot;</span>,<span class="st">&quot;Northern_Peninsula_Forests&quot;</span>, <span class="st">&quot;Long_Range_Barrens&quot;</span>,<span class="st">&quot;Central_Forests&quot;</span>,<span class="st">&quot;Western_Forests&quot;</span>,<span class="st">&quot;EasternHyperOceanicBarrens&quot;</span>,<span class="st">&quot;Maritime_Barrens&quot;</span>,<span class="st">&quot;Avalon_Forests&quot;</span>,<span class="st">&quot;StraitOfBelleIsleBarrens&quot;</span>)</span>
 <span id="cb11-4"><a href="part-iii-creating-and-joining-datasets.html#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="part-iii-creating-and-joining-datasets.html#cb11-5" tabindex="-1"></a>MooseCollisions <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(StudySites, HumanPopulation, Collisions_2020)</span></code></pre></div>
+<span id="cb11-5"><a href="part-iii-creating-and-joining-datasets.html#cb11-5" tabindex="-1"></a>moose_coll <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(collisions2020, human_pop, study_sites)</span></code></pre></div>
 <p><strong>Question 25</strong></p>
+<p>Now we would like to join this dataset with <code>moose_2020</code> (from Part One, question 9). This would allow us to investigate how moose density plays into collisions across our study sites. However, if we try to use <code>left_join()</code> to join them, we will encounter an error. This is because the name of the regions in the <code>moose_2020</code> dataset is under <em>Ecoregion</em> while our <code>moose_coll</code> dataset stores them under <em>study_sites</em>.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Now let’s join this dataset with <code>Moosedata</code> filtered for just the year 2020 (from Part One, question 9). Try to use <code>left_join()</code> to join them. <strong>HINT:</strong> follow the template of the code you used above in question 21. Why does this not work?</p></li>
-<li><p>Use the <code>rename_with()</code> function, to change the column name of one of the datasets to match the other, so that they can be joined. Here is some template code that you can adapt to make the necessary change.</p>
+<li><p>To correct this and join our datasets we can use the <code>rename_with()</code> function. Here is some template code that you can adapt to make the necessary change. Rename the column holding site information in the <code>moose_coll</code> dataset and save the renamed result as <code>moose_coll2</code>.</p>
 <p>Template: rename_with(NewName = OldName)</p></li>
-<li><p>Now join the datasets into a new dataset using <code>left_join()</code>. <strong>HINT:</strong> follow the template of the code you used above in question 21.</p></li>
+<li><p>Now join the datasets into a new dataset using <code>left_join()</code>. Save the joined dataset as <code>coll_merge</code>. <strong>HINT:</strong> follow the template of the code you used above in question 21.</p></li>
 </ol>
 <p><strong>Question 26</strong><br />
-a. How does moose density relate to the number of moose-vehicle collisions? Use the <code>plot()</code> function to create a scatterplot of <code>MooseDensity</code> and <code>Collisions_2020</code></p>
+a. How does moose density relate to the number of moose-vehicle collisions? Use the <code>plot()</code> function to create a scatterplot of <code>MooseDensity</code> and <code>collisions2020</code></p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>What trends do you see? Are there any outliers? Write 1-2 sentences as a comment.</li>
 </ol>
 <p><strong>Question 27</strong><br />
-Which ecoregions have the highest number of moose collisions per person? Create a new column called <code>CollisionsPerCapita</code> that is equal to <code>Collisions_2020</code> divided by <code>HumanPopulation</code>. <em>HINT:</em> Use the <code>mutate</code> function as you did in Part I, question 6, but with appropriate variables.</p>
+Which ecoregions have the highest number of moose collisions per person? Create a new column called <code>coll_per_capita</code> that is equal to <code>collisions2020</code> divided by <code>human_pop</code>. <em>HINT:</em> Use the <code>mutate</code> function as you did in Part I, question 6, but with appropriate variables. Save the dataset with the new <code>coll_per_capita</code> column as <code>coll_merge_per_capita</code>.</p>
 <p><strong>Question 28</strong><br />
-Use the <code>plot()</code> function to create a scatterplot of <code>CollisionsPerCapita</code> versus <code>HumanPopulation</code></p>
+Use the <code>plot()</code> function to create a scatterplot of <code>coll_per_capita</code> versus <code>human_pop</code></p>
 <p><strong>Question 29</strong><br />
 Write 1-2 sentences describing what trends you see. Does this trend make sense based on what you know about moose and human populations in Newfoundland?</p>
 
